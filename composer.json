@@ -1,0 +1,43 @@
+{
+  "name": "senviet/cognalys",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "keywords": [
+    "framework",
+    "http",
+    "rest",
+    "web service",
+    "curl",
+    "client",
+    "HTTP client"
+  ],
+  "homepage": "http://guzzlephp.org/",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "nguyenvanduocit",
+      "email": "nvduoc@senviet.org"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Cognalys": "src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "5.2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cognalys\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cognalys\\Tests\\": "tests/"
+    }
+  }
+}
