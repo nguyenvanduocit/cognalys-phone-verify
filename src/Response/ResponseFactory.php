@@ -12,10 +12,22 @@ namespace Cognalys\Response;
 class ResponseFactory {
     public static function make(array $options){
         if(isset($options['status'])){
-            if('')
+            if('failed' === $options['status']){
+                return new ErrorResponse($options);
+            }
+            else{
+                if(isset($options['keymatch'])){
+                    return new OTPResponse($options);
+                }
+                elseif(isset($options['message']))
+                {
+                    return new VerifyResponse($options);
+                }
+            }
+            throw new \Exception('Unknow exception');
         }
         else{
-            throw new \InvalidArgumentException("Missing status argument");
+            throw new \InvalidArgumentException('Missing status argument');
         }
     }
 }

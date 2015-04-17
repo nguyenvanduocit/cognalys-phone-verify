@@ -7,7 +7,7 @@
  */
 
 namespace Cognalys;
-
+use GuzzleHttp;
 
 class Client implements ClientInterface
 {
@@ -16,7 +16,6 @@ class Client implements ClientInterface
      */
     protected $app_id;
     protected  $access_token;
-    protected $http_client;
 
     protected $base_url = 'https://www.cognalys.com';
     protected $api_version = 'v1';
@@ -28,14 +27,16 @@ class Client implements ClientInterface
         $this->app_id = $app_id;
         $this->access_token = $access_token;
     }
-
+    protected function settup_http_client(){
+        $http_client = new GuzzleHttp\Client();
+    }
     /**
      * @param $phone_number
      * @return string keymatch
      */
     public function otp_call($phone_number)
     {
-
+        $http_client = $this->settup_http_client();
     }
 
     /**
